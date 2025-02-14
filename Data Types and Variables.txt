@@ -1,0 +1,223 @@
+1)What is the output of the following code?
+
+x = 10
+y = 3.14
+z = x + y
+print(type(z))
+
+class 'float'
+
+class 'str'
+
+class 'int'
+
+class 'complex'
+
+Answer:- class 'float'
+
+**********************************************************
+
+2)What is the data type of num = '10'?
+
+Float
+
+String
+
+Boolean
+
+Integer
+
+Answer:- String
+
+**********************************************************
+
+3)Which is the correct way of defining a string variable?
+
+age = 10
+
+string age = 10
+
+age = "Ten"
+
+age = TRUE
+
+answer:- age = "Ten"
+
+**********************************************************
+
+4)What will int('10.5') return?
+
+0
+
+10.5
+
+10
+
+Error
+
+answer:- Error
+
+**********************************************************
+
+5)Which is a valid variable name?
+
+class
+
+break
+
+2variable
+
+_variable
+
+Answer:- _variable
+
+**********************************************************
+
+6)What will be the output of the given python code?
+
+x = 10
+y = "20"
+print(x + int(y))
+
+1020
+
+Error
+
+30
+
+10
+
+Answer:- 30
+
+**********************************************************
+
+7)Which function is used to check the type of a variable?
+
+checktype()
+
+isType()
+
+typeof()
+
+type()
+
+Answer:- type()
+
+**********************************************************
+
+8)Which of the following is NOT a valid string declaration?
+
+greeting = "Hello"
+
+greeting = Hello
+
+greeting = '''Hello'''
+
+greeting = 'Hello'
+
+Answer:- greeting = Hello
+
+**********************************************************
+
+9)What is the result of (0.1 + 0.2 == 0.3)?
+
+False
+
+Error
+
+None
+
+True
+
+Answer:- False
+
+**********************************************************
+
+10)What will print(5+True) result in?
+
+TypeError
+
+ValueError
+
+5
+
+6
+
+Answer:- 6
+
+**********************************************************
+
+11)What will be output of print('2' * 3)?
+
+'222'
+
+TypeError
+
+'6'
+
+6
+
+Answer:- '222'
+
+**********************************************************
+
+12)What will the given python code evaluate to?
+
+x = True
+y = False
+print(x + y)
+
+1
+
+2
+
+True
+
+0
+
+Answer:- 1
+
+**********************************************************
+
+13)What will be the output of the given python code?
+
+z = 10
+print(isinstance(z, int))
+
+True
+
+False
+
+Error
+
+10
+
+Answer:- True
+
+**********************************************************
+
+14)What does the isinstance() function return?
+
+A boolean (True or False)
+
+An integer (0 or 1)
+
+An object type
+
+None
+
+Answer:- A boolean (True or False)
+
+**********************************************************
+
+15)What will be print(isinstance(str(42), str)) return?
+
+False
+
+True
+
+Error
+
+None
+
+Answer:- True
