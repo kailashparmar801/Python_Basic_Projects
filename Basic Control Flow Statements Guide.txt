@@ -1,0 +1,533 @@
+1)Check if a Number is Positive
+
+Complete the code snippet to check whether the given number is positive. 
+If the number is greater than zero, the function should return a message "Positive", indicating that it is positive.
+
+Answer:-def check_positive_number(num):
+    # Fill in the code to check if num is positive
+
+    """
+    Checks if a number is positive.
+
+    Args:
+        number: The number to check.
+
+    Returns:
+        "Positive" if the number is greater than zero, otherwise None.
+    """
+    if num > 0:
+        return "Positive"
+    # No 'else' is needed. If the number is not positive, the function implicitly returns None.
+
+
+# Example usage:
+print(check_positive(5))   # Output: Positive
+print(check_positive(-2))  # Output: None
+print(check_positive(0))   # Output: None
+
+****************************************************************
+
+2)Determine Age Group
+
+Analyze the following code snippet and determine the output when the age is 16.
+
+def check_age(age):
+    if age >= 18:
+        return "Adult"
+    else:
+        return "Minor"
+
+print(check_age(16))
+
+Adult
+
+Error
+
+None of the Above
+
+Minor
+
+Answer:- Minor
+
+****************************************************************
+
+3)Categorize a Number
+
+The code given in the jupyter notebook categorizes a number into three types: positive, zero, or negative. 
+Identify and fix the issue to ensure the code works as expected.
+
+def categorize_number(num):
+    if num > 0:
+        return "Positive"
+    
+    elif num > 0:
+        return "Negative"
+    
+    else:
+        return "Zero";
+
+Answer:- def categorize_number(num):
+    if num > 0:
+        return "Positive"
+    elif num < 0:  # Corrected condition: check if num is less than 0
+        return "Negative"
+    else:
+        return "Zero"
+
+# Example usage (demonstrates all cases):
+print(categorize_number(5))    # Output: Positive
+print(categorize_number(-5))   # Output: Negative
+print(categorize_number(0))    # Output: Zero
+
+****************************************************************
+
+4)Assign Grade Category
+
+Write a function called grade_category that takes a number representing a student's grade and returns the grade category. The categories are as follows:
+
+def grade_category(grade):
+    # Write the code to return the correct grade category
+    pass
+
+A for grades 90 and above
+B for grades greater than or equal to 70 and less than 90
+C for grades greater than or equal to 50 and less than 70
+Fail for grades below 50
+
+Answer:- def grade_category(grade):
+    """
+    Assigns a grade category based on a student's grade.
+
+    Args:
+        grade: The student's grade (a number).
+
+    Returns:
+        The grade category (A, B, C, or Fail).
+    """
+    if grade >= 90:
+        return "A"
+    elif grade >= 70:
+        return "B"
+    elif grade >= 50:
+        return "C"
+    else:
+        return "Fail"
+
+# Example usage:
+print(grade_category(95))  # Output: A
+print(grade_category(80))  # Output: B
+print(grade_category(60))  # Output: C
+print(grade_category(40))  # Output: Fail
+print(grade_category(90)) # Output: A
+print(grade_category(70)) # Output: B
+print(grade_category(50)) # Output: C
+
+****************************************************************
+
+5)Calculate the Sum of Numbers
+
+def calculate_sum(numbers):
+    total = 0
+    # Fill in the loop to iterate through numbers and calculate the sum
+    for ________:
+        ________ 
+    return total
+
+Complete the code snippet to iterate through a list of numbers and calculate their total sum.
+
+Answer:-
+
+****************************************************************
+
+6)Print Numbers Up to a Limit
+
+Analyze the following code snippet and determine its output when the limit is set to 5.
+
+def print_numbers_upto(limit):
+    num = 1
+    while num <= limit:
+        print(num, end=" ")
+        num += 1
+
+print_numbers_upto(5)
+
+None of the given options
+
+5 4 3 2 1
+
+1 2 3 4
+
+12345
+
+Answer:- None of the given options
+
+****************************************************************
+
+7)Fix the Sum of Three Numbers
+
+def sum_of_three_numbers(a, b, c):
+    sum <- a + b + a
+    return sum
+
+The code given in the jupyter notebook is intended to calculate the sum of three numbers and return the result. 
+However, it contains a syntax error and a logical mistake in the calculation. Identify and correct these issues to make the code work as expected.
+
+Answer:- def sum_of_three_numbers(a, b, c):
+    sum_of_numbers = a + b + c  # Corrected: Use = for assignment, and sum all three
+    return sum_of_numbers       # Corrected: Consistent naming (optional, but good practice)
+
+# Example usage:
+result = sum_of_three_numbers(2, 3, 4)
+print(result)  # Output: 9
+
+result = sum_of_three_numbers(10, 20, 30)
+print(result) # Output: 60
+
+result = sum_of_three_numbers(-1, 5, -2)
+print(result) # Output: 2
+
+****************************************************************
+
+8)Calculate the Product of a List
+
+def calculate_product(n):
+    # Write your code here
+    pass
+
+Write a function calculate_product takes a list of numbers as input and calculates the product of all the numbers in the list.
+
+Answer:- def calculate_product(numbers):
+    """Calculates the product of all numbers in a list.
+
+    Args:
+        numbers: A list of numbers.
+
+    Returns:
+        The product of all numbers in the list. Returns 1 if the list is empty.
+    """
+    product = 1  # Initialize product to 1 (not 0, as that would make the product always 0)
+
+    if not numbers: # Check if the list is empty
+        return 1
+
+    for number in numbers:
+        product *= number  # Multiply the current number with the running product
+
+    return product
+
+# Example usage:
+numbers = [2, 3, 4]
+product = calculate_product(numbers)
+print(product)  # Output: 24
+
+numbers = [1, 2, 3, 4, 5]
+product = calculate_product(numbers)
+print(product)  # Output: 120
+
+numbers = [-1, 2, -3]
+product = calculate_product(numbers)
+print(product)  # Output: 6
+
+numbers = [] # Empty list
+product = calculate_product(numbers)
+print(product)  # Output: 1
+
+numbers = [2.5, 2, 4]
+product = calculate_product(numbers)
+print(product)  # Output: 20.0
+
+****************************************************************
+
+9)Find and Stop at a Specific Number
+
+def find_and_stop(numbers):
+    for num in numbers:
+        if num == 5:
+            ________
+    return "Found 5"
+
+Complete the code snippet to stop iterating through the list of numbers as soon as the number 5 is encountered.
+
+Answer:- def find_and_stop(numbers):
+    for num in numbers:
+        if num == 5:
+            break  # The 'break' statement stops the loop
+    return "Found 5"  # This will only be reached if 5 is found
+
+# Example usage:
+numbers1 = [1, 2, 3, 4, 5, 6, 7]
+result1 = find_and_stop(numbers1)
+print(result1)  # Output: Found 5
+
+numbers2 = [1, 2, 3, 4, 6, 7]
+result2 = find_and_stop(numbers2)
+print(result2)  # Output: Found 5 (because the function always returns "Found 5")
+
+numbers3 = [5, 1, 2, 3]
+result3 = find_and_stop(numbers3)
+print(result3)  # Output: Found 5
+
+numbers4 = []
+result4 = find_and_stop(numbers4)
+print(result4) # Output: Found 5
+
+****************************************************************
+
+10)Skip Even Numbers in a Loop
+
+Analyze the following code snippet and determine its output.
+
+def skip_even_numbers():
+    for i in range(1, 6):
+        if i % 2 == 0:
+            continue
+        print(i, end=" ")
+
+skip_even_numbers()
+
+1 5
+
+1 2 3 4 5
+
+1 3 5
+
+1 3 4 5 6
+
+Answer:- 1 3 5
+
+****************************************************************
+
+11)Fix the Target Search Logic
+
+def find_target(numbers, target):
+    for num in numbers:
+        if num == number
+            return "Target Found"
+    return "Target Not Found"
+
+The following code is intended to search for a specific target number in a list and return "Target Found" if the number is present. 
+Identify and correct these issues to make the function work correctly.
+
+Answer:- def find_target(numbers, target):
+    for num in numbers:
+        if num == target:  # Corrected: Compare num with target, not number
+            return "Target Found"
+    return "Target Not Found"
+
+# Example usage:
+numbers = [1, 2, 3, 4, 5]
+target = 3
+result = find_target(numbers, target)
+print(result)  # Output: Target Found
+
+target = 6
+result = find_target(numbers, target)
+print(result)  # Output: Target Not Found
+
+numbers = []
+target = 5
+result = find_target(numbers, target)
+print(result)  # Output: Target Not Found
+
+numbers = [5,5,5]
+target = 5
+result = find_target(numbers, target)
+print(result) # Output: Target Found
+
+****************************************************************
+
+12)Filter Odd Numbers from a List
+
+def filter_odd_numbers(numbers):
+    # Write your code here
+    pass
+
+Write a function called filter_odd_numbers that takes a list of numbers as input and returns a list containing only the odd numbers, skipping even numbers using the continue statement.
+
+Answer:- def filter_odd_numbers(numbers):
+    """Filters odd numbers from a list using the continue statement.
+
+    Args:
+        numbers: A list of numbers.
+
+    Returns:
+        A new list containing only the odd numbers from the input list.
+    """
+    odd_numbers = []
+    for number in numbers:
+        if number % 2 == 0:  # Check if the number is even
+            continue  # Skip to the next iteration if the number is even
+        odd_numbers.append(number)  # Add the number to the new list if it's odd
+    return odd_numbers
+
+# Example usage:
+numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+odd_numbers = filter_odd_numbers(numbers)
+print(odd_numbers)  # Output: [1, 3, 5, 7, 9]
+
+numbers = [2, 4, 6, 8]
+odd_numbers = filter_odd_numbers(numbers)
+print(odd_numbers)  # Output: []  (Empty list because all are even)
+
+numbers = [1, 3, 5, 7]
+odd_numbers = filter_odd_numbers(numbers)
+print(odd_numbers)  # Output: [1, 3, 5, 7] (All are odd)
+
+numbers = [] # Empty list
+odd_numbers = filter_odd_numbers(numbers)
+print(odd_numbers)  # Output: []
+
+numbers = [-1, -2, -3, -4, -5] # Negative numbers
+odd_numbers = filter_odd_numbers(numbers)
+print(odd_numbers)  # Output: [-1, -3, -5]
+
+****************************************************************
+
+13)Determine Number Sign and Calculate Sum Excluding Specific Number
+
+Complete the code to achieve the following:
+
+def specific_sum(num):
+    
+    if ____:  # Fill in the condition to check if the number is positive
+        sign = "Positive"
+        sum = 0
+        for i in ____:  # Complete the range for the loop
+            if ____:  # Add condition to skip the number 5
+                continue
+        sum = sum + i
+    return sign, sum
+
+Check if the given number is positive and assign the appropriate sign.
+Calculate the sum of numbers from 1 to num-1, excluding the number 5. Return the sign of the number and the calculated sum.
+
+Answer:- def specific_sum(num):
+    
+    if num > 0:  # Fill in the condition to check if the number is positive
+        sign = "Positive"
+        sum_of_numbers = 0
+        for i in range(1, num):  # Complete the range for the loop (1 to num-1)
+            if i == 5:  # Add condition to skip the number 5
+                continue
+            sum_of_numbers = sum_of_numbers + i
+        return sign, sum_of_numbers
+    else: # Handle non-positive numbers as well (important!)
+        return "Not Positive", 0  # Or some other appropriate handling for 0 and negative
+
+# Example usage:
+result = specific_sum(10)
+print(result)  # Output: ('Positive', 40)  (1+2+3+4+6+7+8+9 = 40)
+
+result = specific_sum(5)
+print(result)  # Output: ('Positive', 10) (1+2+3+4 = 10)
+
+result = specific_sum(1)
+print(result)  # Output: ('Positive', 0) (No numbers to sum)
+
+result = specific_sum(0)
+print(result)  # Output: ('Not Positive', 0)
+
+result = specific_sum(-5)
+print(result)  # Output: ('Not Positive', 0)
+
+****************************************************************
+
+14)Loop with Conditional Skip and Break
+
+Analyze the following for loop and determine the output.
+
+for i in range(1, 6):
+    if i == 3:
+        continue
+    elif i == 5:
+        break
+    print(i, end="")
+
+1 2 3 4
+
+124
+
+123
+
+1 2 4
+
+Answer:- 124
+
+****************************************************************
+
+15)Debug and Fix: Sum of Squares of Even Numbers
+
+def calculate_sum_even_squares(n):
+    total = 0
+    for num in range(1, n):
+        if num % 2 == 0:
+            total += num**2
+        if num == 5:  
+            break
+    return total
+
+The provided code aims to calculate the sum of squares of all even numbers from 1 to n (exclusive). However, it contains a logical error where the loop stops prematurely. 
+Debug and correct the code so that it calculates the desired sum correctly.
+
+Answer:- def calculate_sum_even_squares(n):
+    total = 0
+    for num in range(1, n):
+        if num % 2 == 0:  # Check if the number is even
+            total += num**2  # Add the square of the even number to the total
+    return total  # The break statement was in the wrong place
+
+# Example usage:
+result = calculate_sum_even_squares(10)  # Sum of squares of 2, 4, 6, 8
+print(result)  # Output: 120
+
+result = calculate_sum_even_squares(5)  # Sum of squares of 2, 4
+print(result)  # Output: 20
+
+result = calculate_sum_even_squares(2) # Sum of squares of no even numbers
+print(result) # Output: 0
+
+result = calculate_sum_even_squares(1) # Sum of squares of no even numbers
+print(result) # Output: 0
+
+****************************************************************
+
+16)Identify and Return the Last Valid Number
+
+Create a function find_last_valid that iterates through numbers from 1 to n (inclusive) and applies the following rules:
+
+def find_last_valid(n):
+    # Write your code here
+    pass
+
+Skip numbers that are multiples of 3.
+Stop the iteration if a number exceeds 30.
+
+The function find_last_valid returns the last number that is not a multiple of 3 and is less than or equal to 30.
+
+Answer:- def find_last_valid(n):
+    """
+    Finds the last number that is not a multiple of 3 and is less than or equal to 30.
+
+    Args:
+        n: The upper limit of the range (inclusive).
+
+    Returns:
+        The last valid number, or None if no valid number is found.
+    """
+    last_valid = None
+    for num in range(1, n + 1):
+        if num % 3 == 0:  # Skip multiples of 3
+            continue
+        if num > 30:  # Stop if the number exceeds 30
+            break
+        last_valid = num  # Update last_valid if the number meets the criteria
+    return last_valid
+
+# Example usage:
+print(find_last_valid(40))  # Output: 30
+print(find_last_valid(25))  # Output: 25
+print(find_last_valid(10))  # Output: 10
+print(find_last_valid(2))   # Output: 2
+print(find_last_valid(0))   # Output: None (No numbers in the range)
+print(find_last_valid(3))   # Output: 2
+print(find_last_valid(33))  # Output: 30
