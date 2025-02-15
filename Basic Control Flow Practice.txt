@@ -1,0 +1,528 @@
+1)Categorize Temperature Levels
+
+Complete the code by filling in the missing parts to correctly implement the temperature categorization logic.
+
+def temperature_category(___):
+    if ___ < 0:
+        return "Freezing"
+    elif ___ < 10:
+        return "Cold"
+    elif ___ < 20:
+        return "Cool"
+    elif ___ < 30:
+        return "Warm"
+    else:
+        return "Hot"
+
+Answer:- def temperature_category(temperature):  # Parameter name should be temperature
+    if temperature < 0:
+        return "Freezing"
+    elif temperature < 10:
+        return "Cold"
+    elif temperature < 20:
+        return "Cool"
+    elif temperature < 30:
+        return "Warm"
+    else:
+        return "Hot"
+
+# Example usage:
+print(temperature_category(-5))  # Output: Freezing
+print(temperature_category(5))   # Output: Cold
+print(temperature_category(15))  # Output: Cool
+print(temperature_category(25))  # Output: Warm
+print(temperature_category(35))  # Output: Hot
+print(temperature_category(0))   # Output: Cold
+print(temperature_category(9.9)) # Output: Cold
+print(temperature_category(10))  # Output: Cool
+print(temperature_category(19.9)) # Output: Cool
+print(temperature_category(20))  # Output: Warm
+print(temperature_category(29.9)) # Output: Warm
+print(temperature_category(30))  # Output: Hot
+
+********************************************************
+
+2)Filter Even Numbers
+
+Complete the code snippet to filter out even numbers from a list. Add the missing condition in the if statement to check whether a number is even.
+
+def filter_even_numbers(numbers):
+    result = []
+    for num in numbers:
+        if ___:
+            result.append(num)
+    return result
+
+Answer:- def filter_even_numbers(numbers):
+    result = []
+    for num in numbers:
+        if num % 2 == 0:  # The missing condition: check if the number is even
+            result.append(num)
+    return result
+
+# Example usage:
+numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+even_numbers = filter_even_numbers(numbers)
+print(even_numbers)  # Output: [2, 4, 6, 8, 10]
+
+numbers = [1, 3, 5, 7, 9]
+even_numbers = filter_even_numbers(numbers)
+print(even_numbers)  # Output: []
+
+numbers = [2, 4, 6, 8, 10]
+even_numbers = filter_even_numbers(numbers)
+print(even_numbers)  # Output: [2, 4, 6, 8, 10]
+
+numbers = []
+even_numbers = filter_even_numbers(numbers)
+print(even_numbers)  # Output: []
+
+numbers = [-2, -4, -6, -8, -10]
+even_numbers = filter_even_numbers(numbers)
+print(even_numbers)  # Output: [-2, -4, -6, -8, -10]
+
+********************************************************
+
+3)Find the First Multiple
+
+Complete the code snippet to find the first number in the list that is a multiple of a given input.
+
+def find_first_multiple(numbers, multiple):
+    result = None
+    for num in numbers:
+        if ____ == 0:  # Fill in the condition to check if num is a multiple of the input
+            result = num
+            _____  # Exit the loop as soon as we find the first multiple
+    return result
+
+Answer:- def find_first_multiple(numbers, multiple):
+    result = None
+    for num in numbers:
+        if num % multiple == 0:  # Fill in the condition to check if num is a multiple of the input
+            result = num
+            break  # Exit the loop as soon as we find the first multiple
+    return result
+
+# Example usage:
+numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+multiple = 3
+first_multiple = find_first_multiple(numbers, multiple)
+print(first_multiple)  # Output: 3
+
+numbers = [1, 2, 4, 5, 7, 8, 10]
+multiple = 3
+first_multiple = find_first_multiple(numbers, multiple)
+print(first_multiple)  # Output: None (no multiple of 3 found)
+
+numbers = [6, 12, 18, 24]
+multiple = 3
+first_multiple = find_first_multiple(numbers, multiple)
+print(first_multiple)  # Output: 6
+
+numbers = []
+multiple = 3
+first_multiple = find_first_multiple(numbers, multiple)
+print(first_multiple)  # Output: None (empty list)
+
+numbers = [2, 4, 6, 8, 10]
+multiple = 2
+first_multiple = find_first_multiple(numbers, multiple)
+print(first_multiple)  # Output: 2
+
+********************************************************
+
+4)Process Numbers with Even Skipping
+
+Complete the code snippet to skip even numbers during processing.
+
+def process_numbers(numbers):
+    total = 0
+    for num in numbers:
+        if ____= 0:  # Fill in the condition to check if the number is even
+            ____  # Skip processing for even numbers
+        total += num
+    return total
+
+Answer:- def process_numbers(numbers):
+    total = 0
+    for num in numbers:
+        if num % 2 == 0:  # Fill in the condition to check if the number is even
+            continue  # Skip processing for even numbers
+        total += num
+    return total
+
+# Example usage:
+numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+result = process_numbers(numbers)
+print(result)  # Output: 25 (1 + 3 + 5 + 7 + 9)
+
+numbers = [2, 4, 6, 8, 10]
+result = process_numbers(numbers)
+print(result)  # Output: 0
+
+numbers = [1, 3, 5, 7, 9]
+result = process_numbers(numbers)
+print(result)  # Output: 25
+
+numbers = []
+result = process_numbers(numbers)
+print(result)  # Output: 0
+
+numbers = [-1, -2, -3, -4, -5]
+result = process_numbers(numbers)
+print(result)  # Output: -9 (-1 + -3 + -5)
+
+********************************************************
+
+5)Predict the Output of Conditional Paths
+
+Examine the mystery_output_1 function and predict the output based on the given conditions. Determine which path the code will follow based on the values of x and y.
+
+def mystery_output_1():
+    x = 10
+    y = 5
+    if x > 5:
+        print("Path 1") 
+    elif y<5:
+        print("Path 2")
+    else:
+        print("Path 3")
+
+Path 3
+
+Path 1
+
+Path 2
+
+Error
+
+Answer:- Path 1
+
+********************************************************
+
+6)Predict the Output of Counting Logic
+
+Analyze the code snippet and predict the output of the mystery_output_2 function.
+
+def mystery_output_2(): 
+    count = 0
+    for i in range(5):
+        if i % 2 == 0:
+            count += 1
+        else:
+            count += 2
+    print(count)
+
+7
+
+5
+
+3
+
+4
+
+Answer:- 7
+
+********************************************************
+
+7)Predict the Output of Loop with Break and Continue
+
+Analyze the mystery_output_3 function and predict the output.
+
+def mystery_output_3():
+    total = 0
+    for i in range(10):
+        if i == 3:
+            continue
+        if i == 7:
+            break
+        total += i
+    print(total)
+
+48
+
+45
+
+18
+
+35
+
+Answer:- 18
+
+********************************************************
+
+8)Predict the Output of Conditions
+
+Examine the provided code snippet and predict the output
+
+x = 10
+y = 20
+z = 15
+
+if x > y:
+    result = "X is greater"
+elif y > z:
+    result = "Y is greater than Z"
+elif z > x:
+    result = "Z is greater than X"
+else:
+    result = "No condition is True"
+
+print(result)
+
+Z is greater than X
+
+Y is greater than Z
+
+X is greater
+
+None
+
+Answer:- Y is greater than Z
+
+********************************************************
+
+9)Fix the Temperature Conversion Formula
+
+The code is intended to convert a temperature from Celsius to Fahrenheit. There is a mistake in the formula for conversion. Fix the formula to correctly convert Celsius to Fahrenheit.
+Formula to covert temperature from Celsius to Fahrenheit:
+
+def temperature_conversion(celsius):  
+    fahrenheit = fahrenheit * (9/32) + 5
+    return fahrenheit
+
+F=9/5*C+32
+
+Answer:- def temperature_conversion(celsius):
+    fahrenheit = (9/5) * celsius + 32  # Corrected formula
+    return fahrenheit
+
+# Example usage:
+celsius = 0
+fahrenheit = temperature_conversion(celsius)
+print(f"{celsius} degrees Celsius is equal to {fahrenheit} degrees Fahrenheit")  # Output: 32.0
+
+celsius = 100
+fahrenheit = temperature_conversion(celsius)
+print(f"{celsius} degrees Celsius is equal to {fahrenheit} degrees Fahrenheit")  # Output: 212.0
+
+celsius = 25
+fahrenheit = temperature_conversion(celsius)
+print(f"{celsius} degrees Celsius is equal to {fahrenheit} degrees Fahrenheit")  # Output: 77.0
+
+celsius = -40
+fahrenheit = temperature_conversion(celsius)
+print(f"{celsius} degrees Celsius is equal to {fahrenheit} degrees Fahrenheit")  # Output: -40.0
+
+********************************************************
+
+10)Fix the Code to Find the First Even Number
+
+The code is intended to return the first even number from a list. However, there is an error in the code. Debug and fix the code to ensure it works correctly.
+
+def find_first_even(numbers):
+    for num in numbers:
+        if numbers % 2 = 0:
+            return num  
+    return None  
+
+Answer:- def find_first_even(numbers):
+    for num in numbers:
+        if num % 2 == 0:  # Corrected: Use == for comparison, and num not numbers
+            return num
+    return None
+
+# Example usage:
+numbers = [1, 3, 5, 2, 7, 9]
+first_even = find_first_even(numbers)
+print(first_even)  # Output: 2
+
+numbers = [1, 3, 5, 7, 9]
+first_even = find_first_even(numbers)
+print(first_even)  # Output: None
+
+numbers = [2, 4, 6, 8]
+first_even = find_first_even(numbers)
+print(first_even)  # Output: 2
+
+numbers = []
+first_even = find_first_even(numbers)
+print(first_even)  # Output: None
+
+********************************************************
+
+11)Debug the Grade Calculation Logic
+
+The code is designed to calculate grades based on a score, but it contains errors in the conditional statements. Debug and fix the code to ensure accurate grade calculations.
+
+def grade_calculation(score): 
+    if score <= 90: 
+        return "A"
+    elif score >= 80: 
+        return "B"
+    elif score >= 70 
+        return "C" 
+    elif score >= 60: 
+        return "D"
+    else: return "F"  
+
+Answer:- def grade_calculation(score):
+    if score >= 90:  # Corrected: Highest grade first
+        return "A"
+    elif score >= 80:
+        return "B"
+    elif score >= 70:
+        return "C"
+    elif score >= 60:
+        return "D"
+    else:
+        return "F"
+
+# Example usage:
+print(grade_calculation(95))  # Output: A
+print(grade_calculation(85))  # Output: B
+print(grade_calculation(75))  # Output: C
+print(grade_calculation(65))  # Output: D
+print(grade_calculation(55))  # Output: F
+print(grade_calculation(90))  # Output: A
+print(grade_calculation(80))  # Output: B
+print(grade_calculation(70))  # Output: C
+print(grade_calculation(60))  # Output: D
+
+********************************************************
+
+12)Fix the Code to Calculate the Sum of Numbers
+
+The code is intended to calculate the sum of a list of numbers, but it contains errors in the loop and summation. Fix the code to ensure it correctly adds all numbers in the list.
+
+def calculate_sum(numbers):
+    for num in numbers:
+        total += numbers 
+    return total
+
+Answer:- def calculate_sum(numbers):
+    total = 0  # Initialize total to 0
+    for num in numbers:
+        total += num  # Add num to total, not the whole list
+    return total
+
+# Example usage:
+numbers = [1, 2, 3, 4, 5]
+sum_of_numbers = calculate_sum(numbers)
+print(sum_of_numbers)  # Output: 15
+
+numbers = [10, 20, 30]
+sum_of_numbers = calculate_sum(numbers)
+print(sum_of_numbers)  # Output: 60
+
+numbers = [-1, -2, -3]
+sum_of_numbers = calculate_sum(numbers)
+print(sum_of_numbers)  # Output: -6
+
+numbers = [] # Empty list
+sum_of_numbers = calculate_sum(numbers)
+print(sum_of_numbers)  # Output: 0
+
+numbers = [2.5, 5, 7.5] # Float numbers
+sum_of_numbers = calculate_sum(numbers)
+print(sum_of_numbers)  # Output: 15.0
+
+********************************************************
+
+13)Write a Function to Find the Largest of Three Numbers
+
+Write a function find_largest that takes three numbers as input and returns the largest of the three numbers.
+
+Answer:- def find_largest(num1, num2, num3):
+    """
+    Finds the largest of three numbers.
+
+    Args:
+        num1: The first number.
+        num2: The second number.
+        num3: The third number.
+
+    Returns:
+        The largest of the three numbers.
+    """
+    if num1 >= num2 and num1 >= num3:
+        return num1
+    elif num2 >= num1 and num2 >= num3:
+        return num2
+    else:  # num3 must be the largest
+        return num3
+
+# Example usage:
+print(find_largest(10, 5, 20))  # Output: 20
+print(find_largest(5, 15, 8))   # Output: 15
+print(find_largest(2, 2, 2))    # Output: 2
+print(find_largest(-1, -5, -2))  # Output: -1
+print(find_largest(1.5, 2.7, 1.2)) # Output: 2.7
+
+********************************************************
+
+14)Write a Function to Find Numbers Divisible by 3 or 5
+
+Write a function divisible_by_3_or_5 that takes an upper limit as input and returns a list of all numbers from 0 to the given limit that are divisible by either 3 or 5.
+
+Answer:- def divisible_by_3_or_5(limit):
+    """
+    Finds numbers divisible by 3 or 5 up to a given limit.
+
+    Args:
+        limit: The upper limit (inclusive).
+
+    Returns:
+        A list of numbers divisible by 3 or 5.
+    """
+    result = []
+    for num in range(0, limit + 1):  # Iterate from 0 to limit (inclusive)
+        if num % 3 == 0 or num % 5 == 0:
+            result.append(num)
+    return result
+
+# Example usage:
+print(divisible_by_3_or_5(20))  # Output: [0, 3, 5, 6, 9, 10, 12, 15, 18, 20]
+print(divisible_by_3_or_5(10))  # Output: [0, 3, 5, 6, 9, 10]
+print(divisible_by_3_or_5(5))   # Output: [0, 3, 5]
+print(divisible_by_3_or_5(2))   # Output: [0]
+print(divisible_by_3_or_5(0))   # Output: [0]
+print(divisible_by_3_or_5(-5))  # Output: [] (Handles negative limit)
+
+********************************************************
+
+15)Write a Function to Check if a Number is Prime
+
+Write a function is_prime that checks if a given number is prime. The function should return True if the number is prime and False otherwise.
+A number is prime if it is greater than 1 and divisible only by 1 and itself.
+
+Answer:- def is_prime(number):
+    """
+    Checks if a given number is prime.
+
+    Args:
+        number: The number to check.
+
+    Returns:
+        True if the number is prime, False otherwise.
+    """
+    if number <= 1:
+        return False  # Numbers less than or equal to 1 are not prime
+
+    # Optimization: Check divisibility only up to the square root of the number
+    for i in range(2, int(number**0.5) + 1):  # +1 to include the sqrt itself.
+        if number % i == 0:
+            return False  # If divisible by any number other than 1 and itself, it's not prime
+
+    return True  # If no divisors found, the number is prime
+
+# Example usage:
+print(is_prime(2))   # Output: True
+print(is_prime(10))  # Output: False
+print(is_prime(17))  # Output: True
+print(is_prime(1))   # Output: False
+print(is_prime(0))   # Output: False
+print(is_prime(-5))  # Output: False
+print(is_prime(25))  # Output: False
+print(is_prime(100)) # Output: False
+print(is_prime(7919)) # Output: True
