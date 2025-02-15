@@ -1,0 +1,154 @@
+1)Double the Number
+
+Write a function double_number(num) that returns twice the value of num. For example, double_number(5) should return 10.
+
+Answer:- def double_number(num):
+  """Returns twice the value of num."""
+  return num * 2
+
+# Example usage:
+result = double_number(5)
+print(result)  # Output: 10
+
+result = double_number(12.5)
+print(result) # Output: 25.0
+
+result = double_number(-3)
+print(result) # Output: -6
+
+*******************************************************
+
+2)Sum and Average
+
+Write a function sum_and_average(num1, num2) that returns the sum and average of two numbers. For example, sum_and_average(5, 10) should return (15, 7.5). 
+The average should be a floating-point number.
+
+Answer:- def sum_and_average(num1, num2):
+    """Returns the sum and average of two numbers.
+
+    Args:
+        num1: The first number.
+        num2: The second number.
+
+    Returns:
+        A tuple containing the sum and average of the two numbers.
+        The average is a float.
+    """
+    sum_of_numbers = num1 + num2
+    average = sum_of_numbers / 2.0  # Ensure floating-point division
+    return (sum_of_numbers, average)
+
+# Example usage:
+result = sum_and_average(5, 10)
+print(result)  # Output: (15, 7.5)
+
+result = sum_and_average(7, 9)
+print(result) # Output: (16, 8.0)
+
+result = sum_and_average(-2, 4)
+print(result) # Output: (2, 1.0)
+
+*******************************************************
+
+3)Document the Function
+
+Write the function sum_and_difference(num1, num2) that returns the sum and difference of two numbers. For example, sum_and_difference(5, 10) should return (15, -5). 
+The function should also have a docstring that describes what it does.
+
+Write the below docstring for the function:
+
+This function takes two numbers as input and returns their sum and difference.
+
+Parameters:
+- num1: The first number.
+- num2: The second number.
+
+Returns:
+- A tuple containing the sum and difference of the two numbers.
+Expected outcome:
+
+If we check the docstring of the function sum_and_difference using sum_and_difference.__doc__, it should return the above docstring like this:
+
+This function takes two numbers as input and returns their sum and difference.
+
+Parameters:
+- num1: The first number.
+- num2: The second number.
+
+Returns:
+- A tuple containing the sum and difference of the two numbers.
+
+Answer:- def sum_and_difference(num1, num2):
+    """
+    This function takes two numbers as input and returns their sum and difference.
+
+    Parameters:
+    - num1: The first number.
+    - num2: The second number.
+
+    Returns:
+    - A tuple containing the sum and difference of the two numbers.
+    """
+    sum_of_numbers = num1 + num2
+    difference = num1 - num2
+    return (sum_of_numbers, difference)
+
+# Example usage:
+result = sum_and_difference(5, 10)
+print(result)  # Output: (15, -5)
+
+# Check the docstring:
+print(sum_and_difference.__doc__)
+
+*******************************************************
+
+4)Type Checking
+
+Define a function is_integer(num) that returnsTrue if the input num is an integer and False otherwise. 
+For example, is_integer(5) should return True, and is_integer(5.5) should return False.
+
+Answer:- def is_integer(num):
+    """
+    Checks if a number is an integer.
+
+    Args:
+        num: The number to check.
+
+    Returns:
+        True if num is an integer, False otherwise.
+    """
+    return isinstance(num, int)
+
+# Example usage:
+print(is_integer(5))    # Output: True
+print(is_integer(5.5))  # Output: False
+print(is_integer(-10)) # Output: True
+print(is_integer(0))   # Output: True
+print(is_integer("abc")) # Output: False (Strings are not integers)
+
+*******************************************************
+
+5)Celsius to Fahrenheit Converter
+
+Write a function celsius_to_fahrenheit(celsius) that returns the Fahrenheit equivalent of the input Celsius temperature.
+The formula to convert Celsius to Fahrenheit is F = (C * 9/5) + 32.
+
+Answer:- def celsius_to_fahrenheit(celsius):
+    """Converts Celsius to Fahrenheit.
+
+    Args:
+        celsius: The temperature in Celsius.
+
+    Returns:
+        The temperature in Fahrenheit.
+    """
+    fahrenheit = (celsius * 9/5) + 32
+    return fahrenheit
+
+# Example usage:
+print(celsius_to_fahrenheit(0))   # Output: 32.0
+print(celsius_to_fahrenheit(100))  # Output: 212.0
+print(celsius_to_fahrenheit(25))  # Output: 77.0
+print(celsius_to_fahrenheit(-40)) # Output: -40.0
+
+
