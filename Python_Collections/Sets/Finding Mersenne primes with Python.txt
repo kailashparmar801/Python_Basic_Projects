@@ -1,0 +1,146 @@
+Mersenne primes are a specific type of prime numbers, named after the French mathematician Marin Mersenne. They are prime numbers that can be written in the form 2^n - 1.
+
+They're very important in the field of number theory and cryptography. Mersenne primes have been extensively used for the creation of pseudorandom number generators, which are essential for cryptography and secure communication. Also, the largest known prime number is usually a Mersenne prime due to the convenient methods of testing for their primality. Additionally, Mersenne primes are intricately connected to the construct of perfect numbers, a concept intriguing to mathematicians for centuries.
+
+The objective of this project is to identify WHICH of the first 1M prime numbers are Mersenne primes. We'll use Python for that!
+
+Let's get started!
+
+Reading the first 1M Prime numbers
+Computing the first 1M prime numbers is not hard, but it's outside of the scope of this project. So, to simplify things, we're going to read the first 1M prime numbers for you and store them in a list named primes. The source is a file named primes1.csv. The notebook shows the code to read the file and create the variable primes.
+
+Detecting if a Prime is a Mersenne Prime
+A Mersenne prime is defined as any prime p which satisfies the following formula:
+
+p
+=
+2
+n
+−
+1
+
+That is, to answer if a prime p is Mersenne we have to answer: does it exist ANY integer n that with the formula 2^n - 1 produces the prime p? If we can find such n, then p IS a Mersenne prime.
+
+For example, 31 is a prime number. But, is it also a Mersenne prime? Let's check! We need to check if there is any n integer that satisfies that 2^n - 1 == 31. We'll start by calculating the formula 2^n - 1 for the first, let's say, 10 numbers:
+
+1 = (2^1) - 1 = 1
+2 = (2^2) - 1 = 3
+3 = (2^3) - 1 = 7
+4 = (2^4) - 1 = 15
+5 = (2^5) - 1 = 31    <<<<<< 31 is here!
+6 = (2^6) - 1 = 63
+7 = (2^7) - 1 = 127
+8 = (2^8) - 1 = 255
+9 = (2^9) - 1 = 511
+10 = (2^10) - 1 = 1023
+1
+Write the function is_mersenne to identify if a prime is a Mersenne prime
+
+Write the function is_mersenne that receives a single prime number p and returns True if it is a Mersenne prime, or False otherwise.
+
+Correct
+We'll follow the simple process of just iterating from 1 up to p and compute the formula 2^n - 1. But, as shown before, if the result of the formula exceeds p, we can break early and avoid the extra computations.
+
+Try changing the variable p to try different prime numbers. You know that 31 is a Mersenne.
+
+p = 27
+
+for i in range(1, p):
+    result = 2 ** i - 1
+    if result == p:
+        print(f"{p} is a Mersenne prime!")
+        break
+    if result > p:
+        print(f"`{i}^2 - 1 = {result}` is greater than {p}. Not a Mersenne prime :( Breaking")
+        break
+
+Now we can just wrap that logic in our function:
+
+def is_mersenne(p):
+    for i in range(1, p):
+        result = 2 ** i - 1
+        if result == p:
+            return True
+        if result > p:
+            return False
+2
+Find all Mersenne primes
+
+Now it's time to find which of the prime numbers in the primes variable are indeed Mersenne primes. Find all Mersenne primes and store them in the variable mersenne_primes. Your list will contain the elements [3, 7, 31, 127, ...].
+
+Correct
+mersenne_primes = []
+for p in primes:
+    if is_mersenne(p):
+        mersenne_primes.append(p)
+Improving the performance
+If you check closely, you'll notice that our solution is not very efficient, as for any new p number we re-calculate the results of 2^n - 1. For example, for 13 we'll do:
+
+1 = (2^1) - 1 = 1
+2 = (2^2) - 1 = 3
+3 = (2^3) - 1 = 7
+4 = (2^4) - 1 = 15 <<<< 15 is greater than 13, NOT Mersenne, exiting
+and for 31 we'll redo the same 4 calculations:
+
+1 = (2^1) - 1 = 1
+2 = (2^2) - 1 = 3
+3 = (2^3) - 1 = 7
+4 = (2^4) - 1 = 15
+5 = (2^5) - 1 = 31    <<<<<< 31 is here! Return True
+We've calculated 2^n - 1 twice for (1 to 4). What we could do instead is store all these known mersenne numbers in an intermediate list, and just check if the prime number is in that list.
+
+3
+Create the list mersenne_numbers
+
+Create a list of Mersenne numbers from 1 up to the one that is larger than the largest prime in the list of primes. That is, suppose our list of primes contained the first 12 primes: [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37]
+
+You should start calculating all integers starting from 1
+
+1 = (2^1) - 1 = 1
+2 = (2^2) - 1 = 3
+3 = (2^3) - 1 = 7
+4 = (2^4) - 1 = 15
+5 = (2^5) - 1 = 31
+6 = (2^6) - 1 = 63  <<<< 63 is LARGER than the largest prime in our list, which is 37. This is NOT included.
+In this case, your list should contain only the mersenne numbers: [1, 3, 7, 15, 31].
+
+Correct
+The naive approach could be just using a while loop:
+
+largest_prime = primes[-1]
+mersenne_numbers = []
+i = 1
+while True:
+    result = 2 ** i - 1
+    if result > largest_prime:
+        break
+    mersenne_numbers.append(result)
+    i += 1
+But we know that while loops are "dangerous", so we could instead use a for-loop:
+
+largest_prime = primes[-1]
+mersenne_numbers2 = []
+
+for i in range(1, largest_prime):
+    result = 2 ** i - 1
+    if result > largest_prime:
+        break
+    mersenne_numbers2.append(result)
+Either way, we're breaking out of the loop as soon as we find that a result is greater than the largest prime number in the collection.
+
+4
+Even more efficient, turn mersenne_numbers into a set
+
+We'll use the list mersenne_numbers to check which numbers in primes are Mersenne numbers. So, the ultimate efficient gain will be to turn mersenne_numbers into a set, as the operations of membership in sets are O(1).
+
+Transform the variable mersenne_numbers into a set containing the same elements.
+
+Correct
+mersenne_numbers = set(mersenne_numbers)
+5
+Find Mersenne primes using mersenne_numbers
+
+Now, create a new variable efficient_mersenne_primes that contains all the mersenne numbers (same as before), but this time, check if the prime is a mersenne using the set mersenne_numbers created in the previous activity.
+
+Correct
+efficient_mersenne_primes = [p for p in primes if p in mersenne_numbers]
